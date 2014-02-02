@@ -1,0 +1,115 @@
+header {
+	margin: 0 auto;
+	background-color: #8F0000;
+	padding: 2rem;
+	text-align: center;
+	position: relative;
+}
+
+header h1 {
+	display: inline-block;
+	text-align: center;
+	font-size: 4rem;
+	font-family: 'Felipa', cursive;
+	text-shadow: 2px 2px 2px #FF1919,
+				3px 3px 1px black;
+}
+
+nav {
+	text-align: center;
+}
+
+nav ul {
+	margin: 0 auto;
+	padding-top: 1rem;
+	word-spacing: 2rem;
+}
+
+nav li {
+	display: inline-block;
+	font-size: 1.5rem;
+	font-family: 'Just Me Again Down Here', cursive;
+	color: black;
+	background-color: #FF1919;
+	padding: .4rem .7rem;
+	border-radius: 10px;
+}
+
+nav li:hover {
+	background-color: black;
+	color: white;
+}
+#nav {
+	background-color: gray;
+}
+
+footer {
+	font-family: 'Just Me Again Down Here', cursive;
+	font-size: 3rem;
+}
+
+footer a {
+	color: black;
+	text-decoration: none;
+	text-shadow: 2px 2px 3px gray;
+}
+
+footer a:hover {
+	color: #8F0000;
+}
+
+
+#headarchive {
+	text-align: center;
+	font-size: 4rem;
+	text-shadow: 2px 2px 3px gray;
+	font-family: 'Swanky and Moo Moo', cursive;
+}
+
+#posts {
+	font-size: 1.5rem;
+	padding: 1rem;
+	display: block;
+}
+
+#viewarchive {
+	padding-top: 1rem;
+	padding-left: 1rem;
+	text-align: left;
+}
+
+
+#viewarchive  a {
+	font-family: 'Just Me Again Down Here', cursive; 
+	font-size: 2rem;
+	color: black;
+	text-align: left;
+}
+
+#viewarchive a:hover {
+	color: #FF1919;
+}
+
+
+#space {
+	border-radius: 5px;
+}
+
+#searchbutton {
+	border-radius: 5px;
+	text-shadow: 0px 1px 1px #dcdcdc;
+	background-color: #efefef;
+}
+
+#sform {
+	display: inline-block;
+	width: 16.875rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+}
+
+
+
+
+
