@@ -1,6 +1,6 @@
 <?php
-
-include($_SERVER["DOCUMENT_ROOT"] . "/juliablog/blog/functions.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/cms/session.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/functions.php");
 //Open connection to database
 include("db_connect.php");
 
@@ -26,34 +26,49 @@ $myposts = mysql_fetch_array($result);
 <!doctype>
 <html>
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
-		<title>All blog posts - Blog CMS</title>
-		<style type="text/css"> @import url(/juliablog/css/julia.css); </style>
+		<meta charset="utf-8">
+		<title>Julia Ann Campbell</title>
+		
+		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="../dist/js/bootstrap.min.js"></script>
+		<link href="../dist/css/bootstrap.css" rel="stylesheet">
+		
+		<style type="text/css"> @import url(../cms/css/cms.css); </style>
 	</head>
 	<body>
-		<?php include("nav.inc") ?>
-		<h1>All blog posts</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-md-8">
+					<h1>Julia's Dashboard</h1>
 
-		<?php 
-		if (isset($message)) {
-			echo "<p class='message'>".$message."</p>";
-		}
+					<?php 
+					if (isset($message)) {
+						echo "<p class='message'>".$message."</p>";
+					}
 
-		if($myposts) {
-			echo "<ol>\n";
-			do {
-				$post_id = $myposts["post_id"];
-				$title = $myposts["title"];
-				$dateattime = $myposts["dateattime"];
-				echo "<li value='$post_id'>";
-				echo "<a href='addpost.php?post_id=$post_id'>$title</a> posted $dateattime";
-				echo " [<a href='".$_SERVER["PHP_SELF"]."?delete=$post_id' onclick='return confirm(\"Are you sure?\")'>delete</a>]";
-				echo "</li>\n";
-			} while ($myposts = mysql_fetch_array($result));
-			echo "</ol>";
-		} else {
-			echo "<p>There are no blog posts in the database.</p>";
-		}
-		?>
+					if($myposts) {
+						echo "<ol>\n";
+						do {
+							$post_id = $myposts["post_id"];
+							$title = $myposts["title"];
+							$dateattime = $myposts["dateattime"];
+							echo "<li value='$post_id'>";
+							echo "<a href='addpost.php?post_id=$post_id'>$title</a> posted $dateattime";
+							echo " [<a href='".$_SERVER["PHP_SELF"]."?delete=$post_id' onclick='return confirm(\"Are you sure?\")'>delete</a>]";
+							echo "</li>\n";
+						} while ($myposts = mysql_fetch_array($result));
+						echo "</ol>";
+					} else {
+						echo "<p>There are no blog posts in the database.</p>";
+					}
+					?>
+				</div><!--end col-8-->
+				<?php include("nav.inc") ?>
+				
+			</div><!--end row-->
+		</div><!--end container-->
+		
 	</body>
 </html>

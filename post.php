@@ -1,7 +1,7 @@
 <?php 
 //open connection to the database
 
-include("../cms/db_connect.php");
+include("./cms/db_connect.php");
 
 //Get post_id from query string
 $post_id = (isset($_REQUEST["post_id"]))?$_REQUEST["post_id"]:"";
@@ -65,83 +65,114 @@ if ($myposts) {
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<title>Julia's Blog</title>
-		<link rel="stylesheet" type="text/css" href="/juliablog/css/reset.css">
-		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Bad+Script|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here|Rock+Salt|Qwigley' rel='stylesheet' type='text/css'>
-
-		<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/script.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="../dist/js/bootstrap.min.js"></script>
+		<link href="../dist/css/bootstrap.css" rel="stylesheet">
+		
 		<style type="text/css"> @import url(../css/julia.css); </style>
 	</head>
 	<body>
+		<div class="container">
+			
 		
 		<?php include("header.php"); ?>
-
-		<!--this is the main part of the page -->
-		<div id="maincontent">
-			<div id="posts">
-				<?php
-				if($myposts) {
-					do {
-						$post_id = $myposts["post_id"];
-						$title = $myposts["title"];
-						$post = format($myposts["post"]);
-						$dateattime = $myposts["dateattime"];
-						echo "<h2>$title</h2>\n";
-						echo "<h4>Posted on $dateattime</h4>\n";
-						echo "<div class='post'>\n $post \n</div>";
-					} while ($myposts = mysql_fetch_array($result));
-				} else {
-					echo "<p>There is no post matching a post_id of $post_id.</p>";
-				}
-				?>
-				<div id="comments">
-					<h2>Comments</h2>
-					<?php
-					if($mycomments) {
-						echo "<dl>";
-						do {
-							$comment_id = $mycomments["comment_id"];
-							$name = $mycomments["name"];
-							$website = $mycomments["website"];
-							$comment = format($mycomments["comment"]);
-							if ($website != "") {
-								echo "<dt><a href='$website'>$name</a> wrote:</dt>\n";
+			<!--this is the main part of the page -->
+			<div id="maincontent">
+				<div class="row">
+					<div class="col-sm-6 col-md-6">
+						<div id="posts">
+							<?php
+							if($myposts) {
+								do {
+									$post_id = $myposts["post_id"];
+									$title = $myposts["title"];
+									$post = format($myposts["post"]);
+									$dateattime = $myposts["dateattime"];
+									echo "<h2>$title</h2>\n";
+									echo "<h4>Posted on $dateattime</h4>\n";
+									echo "<div class='post'>\n $post \n</div>";
+								} while ($myposts = mysql_fetch_array($result));
 							} else {
-								echo "<dt>$name wrote:</dt>\n";
+								echo "<p>There is no post matching a post_id of $post_id.</p>";
 							}
-							echo "<dd>$comment</dd>\n";
-						} while ($mycomments = mysql_fetch_array($result3));
-						echo "</dl>"; 
-						} else {
-							echo "<p>There are no comments yet.</p>";
-					}
-					?>
+							?>
+							<div id="comments">
+								<h2>Comments</h2>
+								<?php
+								if($mycomments) {
+									echo "<dl>";
+									do {
+										$comment_id = $mycomments["comment_id"];
+										$name = $mycomments["name"];
+										$website = $mycomments["website"];
+										$comment = format($mycomments["comment"]);
+										if ($website != "") {
+											echo "<dt><a href='$website'>$name</a> wrote:</dt>\n";
+										} else {
+											echo "<dt>$name wrote:</dt>\n";
+										}
+										echo "<dd>$comment</dd>\n";
+									} while ($mycomments = mysql_fetch_array($result3));
+									echo "</dl>"; 
+									} else {
+										echo "<p>There are no comments yet.</p>";
+								}
+								?>
+								
+							</div>
+						</div>
+					</div><!--end col-6-->
+					<div class="col-sm-6 col-md-6">
+						<div id="sidebar">
+							<h3>Add a comment</h3>
+							<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form-horizontal" role="form">
+							    <div class="form-group">
+							      <div class="col-sm-10">
+							        <input type="hidden" name="post_id" value="<?php echo $post_id; ?>" />
+									<input type="hidden" name="posttitle" value="<?php echo $title; ?>" />
+									<?php
+										if (isset($message)) {
+											echo "<p class='message'>".$_POST["message"]."</p>";
+										}
+									?>
+							      </div>
+							    </div>
+							    <div class="form-group">
+							      <div class="col-sm-10">
+							        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+							      </div>
+							    </div>
+							    <div class="form-group">
+							      <div class="col-sm-10">
+							        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+							      </div>
+							    </div>
+							    <div class="form-group">
+							      <div class="col-sm-10">
+							        <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+							      </div>
+							    </div>
+							    <div class="form-group">
+							      <div class="col-sm-10">
+							        <textarea class="form-control" rows="3" id="comment" name="comment" placeholder="Comments"></textarea>
+							      </div>
+							    </div>
+							    <div class="form-group">
+							      <div class="col-sm-offset-2 col-sm-10">
+							        <button type="submit" class="btn btn-primary" name="postcomment">Submit</button>
+							        
+							      </div>
+							    </div>
+							</form>
+						</div>
+						<!--sidebar ends-->
+					</div><!--end col-6-->
 					
-				</div>
-			</div>
-			<div id="sidebar">
-				
-				
-				<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
-					<input type="hidden" name="post_id" value="<?=$post_id ?>" />
-					<input type="hidden" name="posttitle" value="<?=$title ?>" />
-					<h3>Add a comment</h3>
-					<?php
-					if (isset($message)) {
-						echo "<p class='message'>".$_POST["message"]."</p>";
-					}
-					?>
-					<p>Name: <input name="name" type="text" /></p>
-					<p>Email: <input name="email" type="text" /></p>
-					<p>Website: <input name="website" type="text" /></p>
-					<p>Comment: <textarea name="comment" cols="25" rows="15"></textarea></p>
-					<p><input type="submit" name="postcomment" value="Post comment" /></p>
-				</form>
-			</div>
-			<!--sidebar ends-->
-
-		</div>
-		<!--maincontent ends -->
-		<?php include("footer.php"); ?>
+				</div><!--end row-->
+			</div><!--maincontent ends -->	
+			<?php include("footer.php"); ?>
+		</div><!--end container-->
 	</body>
 </html>

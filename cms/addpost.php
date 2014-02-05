@@ -1,6 +1,6 @@
 <?php
-
-include($_SERVER["DOCUMENT_ROOT"] . "/juliablog/blog/functions.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/cms/session.php");
+include($_SERVER["DOCUMENT_ROOT"] . "/functions.php");
 //If magic quotes is turned on then strip slashes
 if (get_magic_quotes_gpc()) {
 	foreach ($_POST as $key => $value) {
@@ -19,10 +19,10 @@ $submitAdd = (isset($_POST["submitAdd"]))?$_POST["submitAdd"]:"";
 include("db_connect.php");
 
 //Prepare data for database
-$db_title = addslashes($title);
-$db_postdate = addslashes($postdate);
-$db_summary = addslashes($summary);
-$db_post = addslashes($post);
+$db_title = trim(addslashes($title));
+$db_postdate = trim(addslashes($postdate));
+$db_summary = trim(addslashes($summary));
+$db_post = trim(addslashes($post));
 
 //If form has been submitted, insert post into database
 if ($submitAdd) {
@@ -83,8 +83,15 @@ if (preg_match("/^[0-9]+$/", $post_id)) {
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
-		<meta http-equiv="content-type"
-		content="text/html; charset=iso-8859-1" />
+		<meta charset="utf-8">
+		
+		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="../dist/js/bootstrap.min.js"></script>
+		<link href="../dist/css/bootstrap.css" rel="stylesheet">
+		
+		<style type="text/css"> @import url(../cms/css/cms.css); </style>
 
 		<title>
 			<?php 
@@ -102,57 +109,67 @@ if (preg_match("/^[0-9]+$/", $post_id)) {
 		<style type="text/css"> @import url(../cms/css/cms.css); </style>
 	</head>
 	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-8 col-md-8">
+					<h1>
+						<?php 
+						switch ($editmode) {
+							case true:
+								echo "Edit a post";
+								break;
+							case false:
+								echo "Add a post";
+								break;
+						}
+						?>
+					</h1>
+					<?php 
+					if (isset($message)) {
+						echo "<p class='message'>$message</p>";
+					}
+					?>
+					<form method="post" action="<?php echo $_SERVER["PHP_SELF"]?>">
+						<div class="form-group">
+					      <div class="col-sm-10">
+					        <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="<?php if (isset($title)) {echo $title;} ?>">
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-sm-10">
+					        <input type="text" class="form-control" id="date" name="postdate" placeholder="yyyy-mm-dd" value="<?php if (isset($postdate)) {echo $postdate;} ?>" >
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-sm-10">
+					        <textarea class="form-control" rows="3" id="summary" name="summary" placeholder="Summary"><?php if (isset($summary)) {echo $summary;} ?></textarea>
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-sm-10">
+					        <textarea class="form-control" rows="3" id="post" name="post" placeholder="Post"><?php if (isset($post)) {echo $post;} ?></textarea>
+					      </div>
+					    </div>
+					    <div class="form-group">
+					      <div class="col-sm-offset-2 col-sm-10">
+					        <button type="submit" class="btn btn-primary" name="postcomment"><?php 
+									switch ($editmode) {
+										case true:
+											echo "<input type='hidden' name='post_id' value='$post_id' />";
+											echo "<input type='Submit' name='submitUpdate' value='Update post' />";
+											break;
+										case false:
+											echo "<input type='Submit' name='submitAdd' value='Add post' />";
+											break;
+									}
+									?></button>
+					        
+					      </div>
+					    </div>
+					</form>
+				</div>
+			</div>
+		</div>
 		<?php include("nav.inc") ?>
-		<h1>
-			<?php 
-			switch ($editmode) {
-				case true:
-					echo "Edit a post";
-					break;
-				case false:
-					echo "Add a post";
-					break;
-			}
-			?>
-		</h1>
-		<?php 
-		if (isset($message)) {
-			echo "<p class='message'>$message</p>";
-		}
-		?>
-		<form method="post" action="<?php echo $_SERVER["PHP_SELF"]?>">
-			<p>
-			Title: <input type="text" name="title" size="40" value="<?php if (isset($title)) {echo $title;} ?>" />
-			</p>
-			<p>
-				Date/time: <input type="text" name="postdate" size="40" value="<?php if (isset($postdate)) {echo $postdate;} ?>" />yyyy-mm-dd hh:mm:ss
-			</p>
-			<p>
-				Summary:<br />
-				<textarea name="summary" rows="5" cols="60">
-					<?php if (isset($summary)) {echo $summary;} ?>
-				</textarea>
-			</p>
-			<p>
-				Post:<br />
-				<textarea name="post" rows="20" cols="60">
-					<?php if (isset($post)) {echo $post;} ?>
-				</textarea>
-			</p>
-			<p>
-				<?php 
-				switch ($editmode) {
-					case true:
-						echo "<input type='hidden' name='post_id' value='$post_id' />";
-						echo "<input type='Submit' name='submitUpdate' value='Update post' />";
-						break;
-					case false:
-						echo "<input type='Submit' name='submitAdd' value='Add post' />";
-						break;
-				}
-				?>
-			</p>
-		</form>
-
 	</body>
 </html>

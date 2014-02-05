@@ -1,6 +1,11 @@
+body {
+	background-image: url("../img/subtle_grunge.png");
+	background-repeat: repeat;
+}
+
 header {
 	margin: 0 auto;
-	background-color: #8F0000;
+	background-color: black;
 	padding: 2rem;
 	text-align: center;
 	position: relative;
@@ -8,59 +13,74 @@ header {
 
 header h1 {
 	display: inline-block;
+	margin: 0;
 	text-align: center;
-	font-size: 4rem;
-	font-family: 'Felipa', cursive;
-	text-shadow: 2px 2px 2px #FF1919,
-				3px 3px 1px black;
-}
-
-nav {
-	text-align: center;
-}
-
-nav ul {
-	margin: 0 auto;
-	padding-top: 1rem;
-	word-spacing: 2rem;
-}
-
-nav li {
-	display: inline-block;
-	font-size: 1.5rem;
-	font-family: 'Just Me Again Down Here', cursive;
-	color: black;
-	background-color: #FF1919;
-	padding: .4rem .7rem;
-	border-radius: 10px;
-}
-
-nav li:hover {
-	background-color: black;
+	font-size: 8rem;
 	color: white;
+	font-family: 'Bilbo Swash Caps', cursive;
 }
-#nav {
-	background-color: gray;
+
+header h1 a {
+	color: white;
+	padding-right: 1rem;
+}
+
+header h1 a:hover {
+	color: gray;
+	text-decoration: none;
+}
+
+
+.nav-pills li a {
+	color: gray;
+}
+
+.nav-pills {
+	font-family: 'Just Me Again Down Here', cursive; 
+	font-size: 2.7rem;
+}
+
+.nav-pills a:hover {
+	color: black;
+}
+
+[class*="col-"] img {
+	max-width: 100%;
+}
+
+#mainImage {
+	margin-top: 9rem;
+}
+
+#posts h2 a {
+	color: #8F0000;
 }
 
 footer {
-	font-family: 'Just Me Again Down Here', cursive;
 	font-size: 3rem;
+	background-color: black;
+	padding: 2rem;
+	margin-bottom: 2rem;
 }
 
 footer a {
-	color: black;
+	color: white;
+	padding: 2rem;
 	text-decoration: none;
-	text-shadow: 2px 2px 3px gray;
 }
 
 footer a:hover {
-	color: #8F0000;
+	color: gray;
+}
+
+#foot2 {
+	text-align: right;
+	padding-right: 2rem;
 }
 
 
 #headarchive {
-	text-align: center;
+	
 	font-size: 4rem;
 	text-shadow: 2px 2px 3px gray;
 	font-family: 'Swanky and Moo Moo', cursive;
@@ -73,41 +93,30 @@ footer a:hover {
 }
 
 #viewarchive {
-	padding-top: 1rem;
-	padding-left: 1rem;
-	text-align: left;
+	text-align: right;
 }
 
 
 #viewarchive  a {
 	font-family: 'Just Me Again Down Here', cursive; 
-	font-size: 2rem;
-	color: black;
+	font-size: 3rem;
+	color: gray;
 	text-align: left;
 }
 
 #viewarchive a:hover {
-	color: #FF1919;
+	color: white;
+}
+
+#signIn {
+	font-size: 1rem;
 }
 
 
-#space {
-	border-radius: 5px;
-}
 
-#searchbutton {
-	border-radius: 5px;
-	text-shadow: 0px 1px 1px #dcdcdc;
-	background-color: #efefef;
-}
 
-#sform {
-	display: inline-block;
-	width: 16.875rem;
-	position: absolute;
-	top: 1rem;
-	left: 0;
-}
+
+
 
 
 
