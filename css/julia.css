@@ -50,6 +50,7 @@ header h1 a:hover {
 
 #mainImage {
 	margin-top: 9rem;
+	cursor: pointer;
 }
 
 #posts h2 a {
@@ -80,7 +81,6 @@ footer a:hover {
 
 
 #headarchive {
-	
 	font-size: 4rem;
 	text-shadow: 2px 2px 3px gray;
 	font-family: 'Swanky and Moo Moo', cursive;
@@ -97,7 +97,7 @@ footer a:hover {
 }
 
 
-#viewarchive  a {
+#viewarchive a {
 	font-family: 'Just Me Again Down Here', cursive; 
 	font-size: 3rem;
 	color: gray;
@@ -111,6 +111,50 @@ footer a:hover {
 #signIn {
 	font-size: 1rem;
 }
+
+.gallery {
+	margin-top: 2rem;
+}
+
+#social {
+	font-size: 4rem;
+}
+
+#iconLink {
+	color: gray;
+}
+
+#iconPin {
+	color: gray;
+}
+
+#iconTwit {
+	color: gray;
+}
+
+#iconFace{
+	color: gray;
+}
+
+#iconLink:hover{
+	color: #4B4B3B;
+}
+
+#iconPin:hover {
+	color: #4B4B3B;
+}
+
+#iconTwit:hover {
+	color: #4B4B3B;
+}
+
+#iconFace:hover {
+	color: #4B4B3B;
+}
+
+
+
+
 
 
 

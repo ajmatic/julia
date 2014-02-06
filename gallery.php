@@ -17,7 +17,7 @@ while($row = mysql_fetch_assoc($result)) {
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Julia Ann Campbell</title>
+		<title>Gallery</title>
 		
 		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery.js"></script>
@@ -35,31 +35,26 @@ while($row = mysql_fetch_assoc($result)) {
 			
 			
 			<!--this is the main part of the page-->
-			<div class="row">
-				<div class="col-sm-6 col-md-6">
-					<div id="maincontent">
-						<div id="posts">
-							<?php 
-							if(sizeof($myposts) > 0) {
-								$post_id = $myposts[0]["post_id"];
-								$title = $myposts[0]["title"];
-								$entry = format($myposts[0]["post"]);
-								$dateattime = $myposts[0]["dateattime"];
-								echo "<h2 id='post$post_id'><a href='post.php?post_id=$post_id' rel='bookmark'>
-								$title</a></h2>\n";
-								echo "<h4>Posted on $dateattime</h4>\n";
-								echo "<div class='post'>$entry</div>";
-							} else {
-								echo "<p>I haven't posted to my blog yet.</p>";
-							}
-							?>
-						</div>
-					</div>
-					<!--maincontent ends-->
-				</div><!--end col-6-->
-				<div class="col-sm-6 col-md-6">
-					<img alt="Boston skyline" src="../img/boston-skyline2.jpeg" id="mainImage" title="click image to stop animation">
-					
+			<div class="row gallery">
+				<div class="col-sm-4 col-md-4">
+					<img src="../img/flower.jpg">
+				</div><!--end col-4-->
+				<div class="col-sm-4 col-md-4">
+					<img src="../img/stonehedge.jpg">
+				</div>
+				<div class="col-sm-4 col-md-4">
+					<img src="../img/waterfall.jpg">
+				</div>
+			</div><!--end row-->
+			<div class="row gallery">
+				<div class="col-sm-4 col-md-4">
+					<img src="../img/darkwoods.jpg">
+				</div><!--end col-4-->
+				<div class="col-sm-4 col-md-4">
+					<img src="../img/mountain.jpg">
+				</div>
+				<div class="col-sm-4 col-md-4">
+					<img src="../img/purpleflower.jpg">
 				</div>
 			</div><!--end row-->
 			<div class="row">

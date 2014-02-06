@@ -34,7 +34,7 @@ if ($submitAdd) {
 		$message = "Failed to insert post. MySQL said " . mysql_error();
 	} else {
 		$message = "Successfully inserted post '$title'.";
-		$message .= "<br />" . makerssfeed();
+		//$message .= "<br />" . makerssfeed();
 	}
 }
 
@@ -58,7 +58,7 @@ if (preg_match("/^[0-9]+$/", $post_id)) {
 		$message = "Failed to update post. MySQL said " . mysql_error();
 	} else {
 		$message = "Successfully updated post '$title'.";
-		$message .= "<br />" . makerssfeed(); 
+		//$message .= "<br />" . makerssfeed(); 
 	}
 	}
 
@@ -152,24 +152,26 @@ if (preg_match("/^[0-9]+$/", $post_id)) {
 					    </div>
 					    <div class="form-group">
 					      <div class="col-sm-offset-2 col-sm-10">
-					        <button type="submit" class="btn btn-primary" name="postcomment"><?php 
+					        <?php 
 									switch ($editmode) {
 										case true:
 											echo "<input type='hidden' name='post_id' value='$post_id' />";
-											echo "<input type='Submit' name='submitUpdate' value='Update post' />";
+											
+											echo "<button type='Submit' name='submitUpdate' value='Update post' />Update Post</button>";
 											break;
 										case false:
-											echo "<input type='Submit' name='submitAdd' value='Add post' />";
+											echo "<button type='Submit' name='submitAdd' value='Add post' />Add Post</button>";
 											break;
 									}
-									?></button>
+									?>
 					        
 					      </div>
 					    </div>
 					</form>
 				</div>
-			</div>
-		</div>
-		<?php include("nav.inc") ?>
+				<?php include("nav.inc") ?>
+			</div><!--end row-->
+		</div><!--end container-->
+		
 	</body>
 </html>

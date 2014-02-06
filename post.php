@@ -70,7 +70,7 @@ if ($myposts) {
 	    <!-- Include all compiled plugins (below), or include individual files as needed -->
 	    <script src="../dist/js/bootstrap.min.js"></script>
 		<link href="../dist/css/bootstrap.css" rel="stylesheet">
-		
+		<link href="../css/font-awesome.min.css" rel="stylesheet">
 		<style type="text/css"> @import url(../css/julia.css); </style>
 	</head>
 	<body>
