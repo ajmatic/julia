@@ -3,9 +3,10 @@
 		<div class="col-sm-8 col-md-8">
 			<ul class="nav nav-pills">
 			  <li><a href="index.php">Home</a></li>
-			  <li><a href="#">About</a></li>
+			  <li><a href="about.php">About</a></li>
 			  <li><a href="gallery.php">Gallery</a></li>
-			  <li><a href="#">Contact</a></li>
+			  <li><a href="contact.php">Contact</a></li>
+			  <li><a href="login.php">Login</a></li>
 			</ul>
 		</div>
 		<div class="col-sm-4 col-md-4">
