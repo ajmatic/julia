@@ -11,13 +11,13 @@
 					
 						
 						<div class="col-md-12">
-							<a href="" target="_blank"><i class="fa fa-linkedin-square" id="iconLink"></i></a>
+							<a href="#" target="_blank"><i class="fa fa-linkedin-square" id="iconLink"></i></a>
 						
-							<a href="https://github.com/ajmatic" target="_blank"><i class="fa fa-pinterest" id="iconPin"></i></a>
+							<a href="#" target="_blank"><i class="fa fa-pinterest" id="iconPin"></i></a>
 						
-							<a href="https://twitter.com/ajmatic" target="_blank"><i class="fa fa-twitter" id="iconTwit"></i></a>
+							<a href="#" target="_blank"><i class="fa fa-twitter" id="iconTwit"></i></a>
 						
-							<a href="jscode.html" target="_blank"><i class="fa fa-facebook-square" id="iconFace"></i></a>
+							<a href="https://www.facebook.com/julia.campbell" target="_blank"><i class="fa fa-facebook-square" id="iconFace"></i></a>
 						</div>
 					</div>
 				</div>

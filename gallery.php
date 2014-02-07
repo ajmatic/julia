@@ -17,7 +17,7 @@ while($row = mysql_fetch_assoc($result)) {
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Gallery</title>
+		<title>Julia Ann Campbell: Gallery</title>
 		
 		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery.js"></script>

@@ -43,7 +43,7 @@ if (isset($_POST["submit"]) && "1" === $_POST["submit"]) {
       <?php include("header.php"); ?>
       <div class="row">
         <div class="col-sm-6 col-md-6">
-          <h3>Member Login</h3>
+          <h3>Blog Login</h3>
           <form action="" method="post" class="form-horizontal" role="form" name="login">
               <div class="form-group">
                 <div class="col-sm-10">

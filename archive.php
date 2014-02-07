@@ -34,7 +34,7 @@ include("functions.php");
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
 		<title><?php if(isset($thismonth)) echo $thismonth; ?>
-			Archive | Julia's Blog</title>
+			Julia Ann Campbell: Archive</title>
 		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery.js"></script>
 	    <!-- Include all compiled plugins (below), or include individual files as needed -->
