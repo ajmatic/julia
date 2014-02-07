@@ -4,7 +4,7 @@ if ("local.juliaanncampbell.com" === $_SERVER["SERVER_NAME"]) {
 	mysql_select_db("julia", $db);
 } else {
 	$db = mysql_connect("db514361520.db.1and1.com", "dbo514361520", "jul!@camp") or die("Could not connect to database");
-	mysql_connect("db514361520", $db);
+	mysql_select_db("db514361520", $db);
 }
 
 ?>
