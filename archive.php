@@ -54,7 +54,7 @@ include("functions.php");
 						<div id="posts">
 							<h2 id="headarchive">
 								<?php if(isset($thismonth)) echo $thismonth; ?> 
-								ARCHIVE
+								Archive
 							</h2>
 				
 							<?php 

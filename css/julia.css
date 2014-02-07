@@ -53,6 +53,10 @@ header h1 a:hover {
 	cursor: pointer;
 }
 
+#juliaFace {
+	margin: 2rem 0 2rem 8rem;
+}
+
 #posts h2 a {
 	color: #8F0000;
 }
@@ -81,9 +85,7 @@ footer a:hover {
 
 
 #headarchive {
-	font-size: 4rem;
-	text-shadow: 2px 2px 3px gray;
-	font-family: 'Swanky and Moo Moo', cursive;
+	font-size: 2rem;
 }
 
 #posts {
@@ -114,6 +116,7 @@ footer a:hover {
 
 .gallery {
 	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
 #social {

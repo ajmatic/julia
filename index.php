@@ -83,7 +83,7 @@ while($row = mysql_fetch_assoc($result)) {
 				<div class="col-sm-6 col-md-6">
 					<div id="sidebar">
 						<div id="about">
-							<h3>About this</h3>
+							<h3>Julia's Blog</h3>
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 						</div>
 					</div>

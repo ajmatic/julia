@@ -57,39 +57,12 @@ while($row = mysql_fetch_assoc($result)) {
 					<img src="../img/purpleflower.jpg">
 				</div>
 			</div><!--end row-->
-			<div class="row">
-				<div class="col-sm-6 col-md-6">
-					<div id="recent">
-						<h3>Recent posts</h3>
-						<?php
-						if(sizeof($myposts) > 0) {
-							echo "<ul>\n";
-							foreach($myposts as $post) {
-								$post_id = $post["post_id"];
-								$title = $post["title"];
-								echo "<li><a href='post.php?post_id=$post_id' rel='bookmark'>
-								$title</a></li>\n";
-							}
-							echo "</ul>";
-						}
-						?>
-					</div><!--end recent-->
-				</div><!--end col-6-->
-				<div class="col-sm-6 col-md-6">
-					<div id="sidebar">
-						<div id="about">
-							<h3>About this</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-					</div>
-				<!--sidebar ends-->
-				</div>
-			</div><!--end row-->
+			
 				
 				
 			
 			<?php include("footer.php"); ?>
 		</div><!--end container-->
-		<script src="script.js"></script>
+		
 	</body>
 </html>

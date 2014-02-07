@@ -33,68 +33,54 @@ while($row = mysql_fetch_assoc($result)) {
 			
 			<?php include("header.php"); ?>
 			
-			
-			<!--this is the main part of the page-->
 			<div class="row">
-				<div class="col-sm-6 col-md-6">
-					<div id="maincontent">
-						<div id="posts">
-							<?php 
-							if(sizeof($myposts) > 0) {
-								$post_id = $myposts[0]["post_id"];
-								$title = $myposts[0]["title"];
-								$entry = format($myposts[0]["post"]);
-								$dateattime = $myposts[0]["dateattime"];
-								echo "<h2 id='post$post_id'><a href='post.php?post_id=$post_id' rel='bookmark'>
-								$title</a></h2>\n";
-								echo "<h4>Posted on $dateattime</h4>\n";
-								echo "<div class='post'>$entry</div>";
-							} else {
-								echo "<p>I haven't posted to my blog yet.</p>";
-							}
-							?>
-						</div>
+				<div class="col-sm-8 col-md-8">
+					<div id="sidebar">
+						<h3>Send me an email</h3>
+						<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post" class="form-horizontal" role="form">
+						    <div class="form-group">
+						      <div class="col-sm-10">
+						        <input type="hidden" name="post_id" value="<?php echo $post_id; ?>" />
+								<input type="hidden" name="posttitle" value="<?php echo $title; ?>" />
+								<?php
+									if (isset($message)) {
+										echo "<p class='message'>".$_POST["message"]."</p>";
+									}
+								?>
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <div class="col-sm-10">
+						        <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <div class="col-sm-10">
+						        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <div class="col-sm-10">
+						        <textarea class="form-control" rows="3" id="message" name="message" placeholder="Message"></textarea>
+						      </div>
+						    </div>
+						    <div class="form-group">
+						      <div class="col-sm-offset-2 col-sm-10">
+						        <button type="submit" class="btn btn-primary" name="postcomment">Email Me!</button>
+						      </div>
+						    </div>
+						</form>
 					</div>
-					<!--maincontent ends-->
-				</div><!--end col-6-->
+					<!--sidebar ends-->
+				</div><!--end col-->
 				<div class="col-sm-6 col-md-6">
-					<img alt="Boston skyline" src="../img/boston-skyline2.jpeg" id="mainImage" title="click image to stop animation">
 					
 				</div>
-			</div><!--end row-->
-			<div class="row">
-				<div class="col-sm-6 col-md-6">
-					<div id="recent">
-						<h3>Recent posts</h3>
-						<?php
-						if(sizeof($myposts) > 0) {
-							echo "<ul>\n";
-							foreach($myposts as $post) {
-								$post_id = $post["post_id"];
-								$title = $post["title"];
-								echo "<li><a href='post.php?post_id=$post_id' rel='bookmark'>
-								$title</a></li>\n";
-							}
-							echo "</ul>";
-						}
-						?>
-					</div><!--end recent-->
-				</div><!--end col-6-->
-				<div class="col-sm-6 col-md-6">
-					<div id="sidebar">
-						<div id="about">
-							<h3>About this</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-						</div>
-					</div>
-				<!--sidebar ends-->
-				</div>
-			</div><!--end row-->
-				
+			</div>	
 				
 			
-			<?php include("footer.php"); ?>
+		<?php include("footer.php"); ?>
 		</div><!--end container-->
-		<script src="script.js"></script>
+		
 	</body>
 </html>
