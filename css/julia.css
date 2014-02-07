@@ -57,6 +57,10 @@ header h1 a:hover {
 	margin: 2rem 0 2rem 8rem;
 }
 
+#about {
+	padding-left: 1rem;
+}
+
 #posts h2 a {
 	color: #8F0000;
 }

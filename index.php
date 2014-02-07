@@ -29,7 +29,7 @@ while($row = mysql_fetch_assoc($result)) {
 
 	</head>
 	<body>
-		<div class="container">
+		<div class="container-fluid">
 			
 			<?php include("header.php"); ?>
 			
