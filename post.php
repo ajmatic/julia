@@ -63,7 +63,8 @@ if ($myposts) {
 <!doctype>
 <html>
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
 		<title>Julia's Blog</title>
 		<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
 		<script src="https://code.jquery.com/jquery.js"></script>
