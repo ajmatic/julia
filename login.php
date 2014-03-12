@@ -29,7 +29,8 @@ if (isset($_POST["submit"]) && "1" === $_POST["submit"]) {
   <head>
     <meta charset="utf-8">
     <title>Julia Ann Campbell</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
     <link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps|Felipa|Swanky+and+Moo+Moo|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery.js"></script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
