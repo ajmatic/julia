@@ -40,7 +40,7 @@
     			
 		      		<input type="text" name="q" value="" class="form-control">
 		      		<span class="input-group-btn">
-		        	<button class="btn btn-default" type="button">Search</button>
+		        	<button class="btn btn-default" type="submit">Search</button>
 		      		</span>
 		      	</form>
 		    </div><!-- /input-group -->
