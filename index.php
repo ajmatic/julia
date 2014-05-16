@@ -59,7 +59,7 @@ while($row = mysql_fetch_assoc($result)) {
 					<!--maincontent ends-->
 				</div><!--end col-6-->
 				<div class="col-sm-6 col-md-6">
-					<img alt="Boston skyline" src="../img/boston-skyline2.jpeg" id="mainImage" title="click image to stop animation">
+					<img alt="Boston skyline" src="../img/photoevent2.jpg" id="mainImage" title="click image to stop animation">
 					
 				</div>
 			</div><!--end row-->
@@ -85,7 +85,6 @@ while($row = mysql_fetch_assoc($result)) {
 					<div id="sidebar">
 						<div id="about">
 							<h3>Julia's Blog</h3>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
 						</div>
 					</div>
 				<!--sidebar ends-->

@@ -1,6 +1,6 @@
 myImage = document.getElementById("mainImage");
 
-imageArray = ["../img/snow-woods16-9.jpg", "../img/river16-9.jpg", "../img/flowers16-9.jpg", "../img/boston-skyline2.jpeg"];
+imageArray = ["../img/photo.png", "../img/photoevent2.jpg"];
 
 imageIndex = 0;
 
