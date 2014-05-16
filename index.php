@@ -85,6 +85,9 @@ while($row = mysql_fetch_assoc($result)) {
 					<div id="sidebar">
 						<div id="about">
 							<h3>Julia's Blog</h3>
+							<p>
+								<a href=" http://www.popsugar.com/PassportToHealthySkinBoston" target="_blank">Register for the event!!</a>
+							</p>
 						</div>
 					</div>
 				<!--sidebar ends-->
